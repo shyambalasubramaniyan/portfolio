@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/0cb074ecfa.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>software developer</p>
+                <h1>Hi, I'm <span>Shyam</span><br>From Mannargudi </h1>
+            </div>
+        </div>
+
+    </div>
+    <!-----------about---------->
+    <div id="about"></div>
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/user.JPG">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>A self-motivated, passionate individual with a bachelor's degree in information technology. 
+                    Have knowledge of Python and HTML. Interested in learning new technologies and approaches. 
+                    Looking to begin a career as an entry- level professional with a reputable IT firm.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        <p class="tab-links" onclick="opentab('In Plant Training')">In Plant Training</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>Programming Language</span><br>Python Programming Language <br>HTML</li>
+                            <li><span>App Development</span><br>Building Android apps</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span> 2019-2023</span><br>B.Tech/IT from Anjalai Ammal Mahalingam Engineering College Kovilvenni.</li>
+                            <li><span>2018-2019</span><br>HSC from Dharani Matric Higher Secondary School Mannargudi.</li>
+                            <li><span>2016-2017</span><br>SSLC from Dharani Matric Higher Secondary School Mannargudi.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="In Plant Training">
+                        <ul>
+                            <li><span>Python Programming Language</span><br> Training At Basic of Pthon in  Uniq Technologies Chennai </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!---------------portfolio----------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/work-1.png">
+                    <div class="layer">
+                        <h3>Chatify App</h3>
+                        <p>Launched a Fully integrated application for Android devices with specialized chatting features,The main 
+                            objective of this project is to gift a package application for the Launching ofa real time communication between user.
+                        </p>
+                       <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                 </div>
+                 <div class="work">
+                    <img src="images/work-2.webp">
+                    <div class="layer">
+                        <h3>Fuel Delivery App</h3>
+                        <p>The on demand fuel delivery app for Android aims to provide a convenient and efficient way for users to order fuel and have it delivered to
+                            their location.</p>
+                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    
+                    </div>
+                 </div>
+            </div>
+            
+        </div>
+    </div>
+ <!------------contact-------->
+ <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i> shyambalasubramaniyan5@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 6379656960</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/shyam-b-b45a5a217"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://instagram.com/shyam_balasubramaniyan?igshid=NGExMmI2YTkyZg=="><i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <a href="images/my cv.pdf" download class="btn  btn2">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright 2023 shyam. Made with <i class="fa-solid fa-heart"></i> by shyam</p>
+    </div>
+ </div>
+    <script>
+        var tablinks=document.getElementsByClassName("tab-links");
+        var tabcontents=document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+    </script>
+    <script>
+        var sidemeu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemeu.style.right="0";
+}
+        function closemenu(){
+            sidemeu.style.right="-200px";
+
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwCcgmIfUFPI-L5Dj0Ndklzx1QI_fBcYkTt7xOsE4pUia7w42x9fnzzPHPIabAdBghcRg/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg =document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML ="Message send successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
